@@ -25,6 +25,7 @@ export function Button({ children, variant, ...props }: Readonly<ButtonProps>) {
         props.className
       )}
       type={props.type ?? 'button'}
+      onClick={props.onClick}
     >
       {children}
     </button>

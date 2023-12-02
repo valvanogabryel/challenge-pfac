@@ -7,7 +7,7 @@ import { useCustomFormik } from '@/hook/useCustomFormik';
 
 export function Form({ type }: Readonly<{ type: 'signup' | 'login' }>) {
   const formik = useCustomFormik(type);
-
+  
   return (
     <form
       className="flex flex-col gap-8"
@@ -26,7 +26,7 @@ export function Form({ type }: Readonly<{ type: 'signup' | 'login' }>) {
         <LabeledInput
           formik={formik}
           label="Nome de usuário"
-          inputName="username"
+          inputName="name"
           inputType="text"
           placeholder="Digite seu username"
         />
