@@ -1,12 +1,38 @@
 import { Injectable } from '@nestjs/common';
 import { CreateMessageDto } from 'src/dto/create-message.dto';
 import { Message } from 'src/messages/entities/message.entity';
+import redis from 'src/database/redisConnection';
+import { Redis } from 'ioredis';
+import { response } from 'express';
 
 @Injectable()
 export class MessagesService {
-  messages: Message[] = [];
+  private readonly redis: Redis;
+  private readonly MESSAGES_KEY = 'messages';
+
+  constructor() {
+    this.redis = redis;
+  }
+
   activeUsers: string[] = [];
   clientToUser = {};
+
+  async create(createMessageDto: CreateMessageDto, clientId: string) {
+    try {
+      const username = await this.waitForUsername(clientId);
+      const message = {
+        name: username,
+        text: createMessageDto.text,
+      };
+
+    
+      await this.redis.rpush(this.MESSAGES_KEY, JSON.stringify(message));
+      return message;
+    } catch (error) {
+      console.error('Erro ao aguardar o nome de usuário:', error);
+      throw error;
+    }
+  }
 
   async waitForUsername(clientId: string): Promise<string> {
     return new Promise((resolve, _) => {
@@ -45,22 +71,23 @@ export class MessagesService {
     return this.clientToUser[clientId];
   }
 
-  async create(createMessageDto: CreateMessageDto, clientId: string) {
+  async findAll() {
     try {
-      const username = await this.waitForUsername(clientId);
-      const message = {
-        name: username,
-        text: createMessageDto.text,
-      };
-
-      this.messages.push(message);
-      return message;
+      return await this.getAllMessages();
     } catch (error) {
-      console.error('Erro ao aguardar o nome de usuário:', error);
+      console.error('Erro ao buscar todas as mensagens:', error);
+      throw error;
     }
   }
 
-  findAll() {
-    return this.messages;
+  async getAllMessages() {
+    try {
+      const response = await this.redis.lrange(this.MESSAGES_KEY, 0, -1);
+      const parsedMessages = response.map((msg) => JSON.parse(msg));
+      return parsedMessages;
+    } catch (error) {
+      console.error('Erro ao buscar mensagens no Redis:', error);
+      throw error;
+    }
   }
 }
