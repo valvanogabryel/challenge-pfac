@@ -8,6 +8,7 @@ import { AuthService } from './services/auth/auth.service';
 import { JwtService } from '@nestjs/jwt';
 import { ChatGateway } from './gateway/chat.gateway';
 import { MessagesService } from './services/chat/message.service';
+import { Message } from './messages/entities/message.entity';
 
 @Module({
   imports: [],
@@ -19,6 +20,7 @@ import { MessagesService } from './services/chat/message.service';
     JwtService,
     ChatGateway,
     MessagesService,
+    Message,
   ],
 })
 export class AppModule {}
