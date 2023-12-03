@@ -6,13 +6,13 @@
       "use": "@vercel/node"
     },
     {
-      "src": "dist/**/*",
+      "src": "public/**/*",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
-      "src": "dist/(.*)",
+      "src": "public/(.*)",
       "dest": "src/main.ts"
     }
   ]
