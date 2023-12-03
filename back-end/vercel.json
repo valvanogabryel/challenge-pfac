@@ -8,12 +8,26 @@
   ],
   "routes": [
     {
-      "src": "/(.*)",
-      "dest": "dist/main.js",
+      "src": "/api/(.*)",
+      "dest": "/dist/main.js",
       "methods": [
         "GET",
         "POST"
       ]
+    }
+  ],
+  "env": {
+    "NODE_ENV": "production"
+  },
+  "functions": {
+    "api": {
+      "runtime": "@vercel/node"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/dist/main.js"
     }
   ]
 }
