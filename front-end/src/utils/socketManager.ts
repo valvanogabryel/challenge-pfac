@@ -12,7 +12,7 @@ const setupSocket = (
   setTypingDisplay: Dispatch<SetStateAction<string>>
 ) => {
   if (userInfo?.name) {
-    const newSocket = io('https://challenge-pfac-backend.vercel.app/');
+    const newSocket = io('https://challenge-pfac-backend.vercel.app');
     setSocket(newSocket);
 
     newSocket.on('connect', () => {
