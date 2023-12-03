@@ -10,7 +10,7 @@ import {
 } from '@nestjs/common';
 import { User } from '@prisma/client';
 
-import { UserService } from 'src/services/users/user.service';
+import { UserService } from '../../services/users/user.service';
 
 @Controller('users')
 export class UserController {

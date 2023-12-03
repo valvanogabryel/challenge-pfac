@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { CreateMessageDto } from 'src/dto/create-message.dto';
-import redis from 'src/database/redisConnection';
+import { CreateMessageDto } from '../../dto/create-message.dto';
+import redis from '../../database/redisConnection';
 import { Redis } from 'ioredis';
 
 @Injectable()
