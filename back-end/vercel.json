@@ -12,8 +12,12 @@
       "dest": "src/main.ts",
       "methods": [
         "GET",
-        "POST"
-      ]
+        "POST",
+        "DELETE"
+      ],
+      "headers": {
+        "Access-Control-Allow-Origin": "https://challenge-pfac-frontend.vercel.app"
+      }
     }
   ]
 }
