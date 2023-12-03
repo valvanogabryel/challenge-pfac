@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const api = axios.create({
-  baseURL: 'http://localhost:4003',
+  baseURL: 'https://challenge-pfac-backend.vercel.app',
   headers: {
     'Content-Type': 'application/json',
   },
