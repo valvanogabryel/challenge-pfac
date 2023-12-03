@@ -11,7 +11,10 @@ import { MessagesService } from '../services/chat/message.service';
 
 @WebSocketGateway({
   cors: {
-    origin: '*',
+    origin: 'https://challenge-pfac-frontend.vercel.app',
+    methods: ['GET', 'POST'],
+    allowedHeaders: ['Authorization'],
+    credentials: true,
   },
 })
 export class ChatGateway {
