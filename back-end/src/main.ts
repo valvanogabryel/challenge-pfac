@@ -5,7 +5,7 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   app.enableCors({
-    origin: 'https://challenge-pfac-frontend.vercel.app',
+    origin: '*',
     credentials: true,
   });
 
