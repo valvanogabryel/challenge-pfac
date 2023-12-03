@@ -1,5 +1,11 @@
 {
   "version": 2,
+  "env": {
+    "DATABASE_URL": "postgresql://valvanogabryel:1TuCF5OIqfVe@ep-orange-star-04936487.us-east-2.aws.neon.tech/PFAC_teste?sslmode=require",
+    "SECRET": "!se#cre@tosenha",
+    "REDIS_URL": "redis-18266.c308.sa-east-1-1.ec2.cloud.redislabs.com:18266",
+    "REDIS_PASSWORD": "jLo1azudWu5hsZeGoHt5YCROb4Vl1jPV"
+  },
   "builds": [
     {
       "src": "src/main.ts",
