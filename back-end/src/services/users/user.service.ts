@@ -7,7 +7,6 @@ import * as bcrypt from 'bcrypt';
 export class UserService {
   constructor(private readonly prisma: PrismaService) {}
 
-  // * GET
   async getAll() {
     return await this.prisma.user.findMany();
   }
@@ -20,8 +19,17 @@ export class UserService {
     });
   }
 
-  // * POST
   async register(user: User) {
+    const userAlreadyExists = await this.prisma.user.findFirst({
+      where: {
+        OR: [{ email: user.email }, { name: user.name }],
+      },
+    });
+
+    if (userAlreadyExists) {
+      throw new Error('Usuário já cadastrado!');
+    }
+
     const hashedPassword = await bcrypt.hash(user.password, 10);
 
     return await this.prisma.user.create({
@@ -32,7 +40,6 @@ export class UserService {
     });
   }
 
-  // * DELETE
   async delete(id: string) {
     return await this.prisma.user.delete({ where: { id } });
   }

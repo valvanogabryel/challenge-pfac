@@ -49,7 +49,7 @@ export class ChatGateway {
   @SubscribeMessage('disconnect')
   handleDisconnect(client: Socket) {
     const activeUsers = this.messagesService.leave(client.id);
-    client.broadcast.emit('activeUsers', activeUsers); 
+    client.broadcast.emit('activeUsers', activeUsers);
   }
 
   @SubscribeMessage('typing')

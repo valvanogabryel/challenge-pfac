@@ -27,11 +27,15 @@ export function ChatMessage({ messages }: Readonly<ChatMessageProps>) {
             } mb-2`}
           >
             <div>
-              <span className="text-xs text-neutral-400">
+              <span
+                className={`text-xs text-neutral-400 block m-1 ${
+                  message.name === userInfo?.name ? 'text-end' : 'text-start'
+                }`}
+              >
                 {message.name || null}
               </span>
               <motion.div
-                className={`text-neutral-900 py-2 px-4 rounded-xl text-xs md:text-sm ${
+                className={`text-neutral-900 py-2 px-4 shadow rounded-xl text-xs md:text-sm select-text ${
                   message.name === userInfo?.name
                     ? 'bg-primary-100  rounded-br-none'
                     : 'bg-primary-50 rounded-bl-none'

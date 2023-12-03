@@ -1,9 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { CreateMessageDto } from 'src/dto/create-message.dto';
-import { Message } from 'src/messages/entities/message.entity';
 import redis from 'src/database/redisConnection';
 import { Redis } from 'ioredis';
-import { response } from 'express';
 
 @Injectable()
 export class MessagesService {
@@ -25,7 +23,6 @@ export class MessagesService {
         text: createMessageDto.text,
       };
 
-    
       await this.redis.rpush(this.MESSAGES_KEY, JSON.stringify(message));
       return message;
     } catch (error) {

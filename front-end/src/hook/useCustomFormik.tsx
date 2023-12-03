@@ -2,6 +2,7 @@ import authenticateUser from '@/api/utils/authUser';
 import registerUser from '@/api/utils/registerUser';
 import { useFormik } from 'formik';
 import { z } from 'zod';
+import toast, { ErrorIcon } from 'react-hot-toast';
 import { toFormikValidationSchema } from 'zod-formik-adapter';
 
 let formik;
@@ -33,8 +34,6 @@ export function useCustomFormik(type: 'signup' | 'login') {
       onSubmit: async (values, actions) => {
         try {
           await registerUser(values);
-          alert('Usuário cadastrado com sucesso!');
-          window.location.href = '/login';
         } catch (err: any) {
           alert(err.message);
         }
@@ -63,12 +62,12 @@ export function useCustomFormik(type: 'signup' | 'login') {
       onSubmit: async (values, actions) => {
         try {
           const { access_token } = await authenticateUser(values);
-
           localStorage.setItem('access_token', access_token);
-
           window.location.href = '/';
         } catch (err: any) {
-          alert(err.message);
+          toast(err.message, {
+            icon: <ErrorIcon />,
+          });
         }
 
         actions.resetForm();

@@ -1,5 +1,15 @@
-import { Controller, Get, Post, Body, Delete, Param } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Delete,
+  Param,
+  HttpException,
+  HttpStatus,
+} from '@nestjs/common';
 import { User } from '@prisma/client';
+
 import { UserService } from 'src/services/users/user.service';
 
 @Controller('users')
@@ -18,7 +28,11 @@ export class UserController {
 
   @Post()
   async createUser(@Body() userObject: User) {
-    return await this.userService.register(userObject);
+    try {
+      return await this.userService.register(userObject);
+    } catch (err) {
+      throw new HttpException(err.message, HttpStatus.BAD_REQUEST);
+    }
   }
 
   @Delete(':id')

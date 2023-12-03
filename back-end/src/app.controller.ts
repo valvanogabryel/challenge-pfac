@@ -1,10 +1,7 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
-import { PrismaService } from './database/prisma.service';
+import { Controller, Get } from '@nestjs/common';
 
 @Controller()
 export class AppController {
-  constructor(private prisma: PrismaService) {}
-
   @Get()
   async sayHello() {
     return {
