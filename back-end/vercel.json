@@ -19,11 +19,6 @@
   "env": {
     "NODE_ENV": "production"
   },
-  "functions": {
-    "api": {
-      "runtime": "@vercel/node"
-    }
-  },
   "rewrites": [
     {
       "source": "/(.*)",
