@@ -14,11 +14,7 @@ export function ChatMessage({ messages }: Readonly<ChatMessageProps>) {
   useLayoutEffect(() => {
     const scrollToBottom = () => {
       if (bottomRef.current) {
-        bottomRef.current.scrollIntoView({
-          behavior: 'smooth',
-          block: 'end',
-          inline: 'nearest',
-        });
+        bottomRef.current.scrollTop = bottomRef.current.scrollHeight;
       }
     };
 
