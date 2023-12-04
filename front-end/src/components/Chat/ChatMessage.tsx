@@ -1,7 +1,7 @@
 import { useUserInfo } from '@/context/userInfoContext';
 import IMessage from '@/interface/IMessage';
 import { motion } from 'framer-motion';
-import { useEffect, useRef } from 'react';
+import { useLayoutEffect, useRef } from 'react';
 
 interface ChatMessageProps {
   messages: IMessage[];
@@ -11,14 +11,18 @@ export function ChatMessage({ messages }: Readonly<ChatMessageProps>) {
   const userInfo = useUserInfo();
   const bottomRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    if (bottomRef.current) {
-      bottomRef.current.scrollIntoView({
-        behavior: 'smooth',
-        block: 'end',
-        inline: 'nearest',
-      });
-    }
+  useLayoutEffect(() => {
+    const scrollToBottom = () => {
+      if (bottomRef.current) {
+        bottomRef.current.scrollIntoView({
+          behavior: 'smooth',
+          block: 'end',
+          inline: 'nearest',
+        });
+      }
+    };
+
+    scrollToBottom();
   }, [messages]);
 
   if (messages?.length < 1)
