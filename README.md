@@ -4,7 +4,7 @@ Este é o repositório da aplicação de chat desenvolvida como parte do teste t
 
 ### Deploy
 - **Vercel** (Front-end) e **Heroku** (Back-end)
-- **Deploy 🚀**: https://challenge-pfac-frontend.vercel.app/
+- **Deploy 🚀**: https://challenge-pfac-frontend.vercel.app/{:target="_blank"}
 
 ## Funcionalidades
 - **Autenticação de Usuário:** Cadastro e login com email, nome de usuário e senha.
