@@ -9,7 +9,7 @@ Este é o repositório da aplicação de chat desenvolvida como parte do teste t
 ## Autor
 - Gabryel Valvano
 - valvanogabryel@gmail.com
-- **Portfólio ✨** [Abra em uma nova guia]: portfolio-gabryel.vercel.app
+- **Portfólio ✨** [Abra em uma nova guia]: https://portfolio-gabryel.vercel.app
 
 ## Funcionalidades
 - **Autenticação de Usuário:** Cadastro e login com email, nome de usuário e senha.
