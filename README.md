@@ -29,17 +29,17 @@ Este é o repositório da aplicação de chat desenvolvida como parte do teste t
 - **Realtime Chat:** SocketIO
 
 ### Frontend
-- **Design**: Figma
-- **Framework:** NextJS (App Routing)
+- **Design**: Figma (design próprio)
+- **Framework:** NextJS (App Routing) + Typescript
 - **Estilização:** TailwindCSS
 - **Gestão de estados:** React Context API para perfil de usuário, Formik para formulários
 - **Consumo de api:** Axios
 - **Validação de formulário:** Zod
 
 ## Desafios
-- **Implementação do Redis:** Após fazer o chat funcionar com um array que armazenava as mensagens, fui tentar implementar o Redis. Foi uma das primeiras coisas que me "travou" no projeto, pois sequer já tinha ouvido falar sobre esse banco. Li a documentação do Redis, do Nest...
-- **Deploy do back-end da aplicação**: Fazer o servidor ir pro ar foi um teste real. Primeiro, tentei usar a Vercel, mesmo ela sendo mais focada em front-end. Só que as requisições usando o protocolo WebSocket não estavam funcionando direito. Depois de muitas horas batendo cabeça, mudei pra Heroku. Finalmente, depois de umas horas estressantes, deu certo!
-- **Aprendizado de novas tecnologias**: Durante o desenvolvimento desse projeto, encarei tecnologias novas, especialmente no backend, tipo o NestJS e o Redis. Aprendê-las num período tão curto foi desafiador. Passei um bom tempo em tutoriais, olhando documentação e tentando exemplos pra entender tudo o mais rápido possível.
+- **Implementação do Redis:** Após fazer o chat funcionar com um array que armazenava as mensagens, fui tentar implementar o Redis. Foi uma das primeiras coisas que me "travou" no projeto, pois sequer já tinha ouvido falar sobre esse banco e não fazia ideia de como implementar ele. Li a documentação do Redis, do Nest, e enfim conheci o `ioredis`, que me ajudou a fazer com que o banco funcionasse.
+- **Deploy do back-end da aplicação**: Fazer o servidor ir pro ar foi um teste real, visto que eu nunca tinha feito deploy de um site/aplicação full-stack antes. Primeiro, tentei usar a Vercel, mesmo ela sendo mais focada em front-end, só que as requisições usando o protocolo WebSocket não estavam funcionando; então, embora o cadastro e autenticação funcionassem, o chat estava estático. Depois de muitas horas batendo cabeça, mudei para o Heroku e deu certo!  
+- **Aprendizado de novas tecnologias**: Durante o desenvolvimento desse projeto, encarei tecnologias novas, especialmente no backend, como o NestJS e o Redis. Aprendê-las num período tão curto foi desafiador. Passei um bom tempo em tutoriais, olhando documentação e tentando exemplos pra entender tudo o mais rápido possível. Embora tenha sido cansativo, foi recompensador. Definitivamente espero aplicar o que eu aprendi em futuros projetos!
 
 ## Observações
 - Troquei a biblioteca `React Hook Form` pelo `Formik` por já ter tido algum contato antes com o Formik.
