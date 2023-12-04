@@ -2,6 +2,8 @@ import { randomColor } from '@/utils/randomColor';
 import { UserCircle2 as UserIcon } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { io } from 'socket.io-client';
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
 
 export function UsersConnected() {
   const [connectedUsers, setConnectedUsers] = useState<string[]>();
@@ -26,7 +28,9 @@ export function UsersConnected() {
               key={user}
             >
               <UserIcon color={`#${randomColor()}`} />
-              <span className="font-semibold text-xs">{user}</span>
+              <span className="font-semibold text-xs">
+                {user ?? <Skeleton />}
+              </span>
             </div>
           );
         })}

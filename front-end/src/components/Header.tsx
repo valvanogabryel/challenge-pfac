@@ -5,6 +5,8 @@ import {
 import { Button } from './Button';
 import handleLogOut from '@/api/utils/handleLogOut';
 import { useUserInfo } from '@/context/userInfoContext';
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
 
 export function Header() {
   const userInfo = useUserInfo();
@@ -14,7 +16,9 @@ export function Header() {
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
           <UserIcon color="#4299E1" />
-          <span className="font-semibold">{userInfo?.name}</span>
+          <span className="font-semibold">
+            {userInfo?.name ?? <Skeleton />}
+          </span>
         </div>
         <MenuIcon className="cursor-pointer duration-500 rounded-full hover:bg-neutral-700" />
       </div>
