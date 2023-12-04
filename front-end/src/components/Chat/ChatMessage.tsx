@@ -65,8 +65,8 @@ export function ChatMessage({ messages }: Readonly<ChatMessageProps>) {
             </div>
           ))}
         </div>
+        <div ref={bottomRef} />
       </div>
-      <div ref={bottomRef} />
     </div>
   );
 }
