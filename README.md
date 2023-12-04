@@ -23,6 +23,7 @@ Este é o repositório da aplicação de chat desenvolvida como parte do teste t
 - **Realtime Chat:** SocketIO
 
 ### Frontend
+- **Design**: Figma
 - **Framework:** NextJS (App Routing)
 - **User Interface (UI):** TailwindCSS
 - **Gestão de estados:** React Context API para perfil de usuário, Formik para formulários
