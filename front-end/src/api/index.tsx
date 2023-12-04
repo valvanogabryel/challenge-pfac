@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const api = axios.create({
-  baseURL: 'https://challenge-pfac-backend.vercel.app',
+  baseURL: 'https://pfac-chat-backend-eb5895b4a7a3.herokuapp.com',
   headers: {
     'Content-Type': 'application/json',
   },
