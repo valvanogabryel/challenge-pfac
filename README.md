@@ -17,6 +17,7 @@ Este é o repositório da aplicação de chat desenvolvida como parte do teste t
 - **Comunicação em Tempo Real:** Os usuários recebem mensagens em tempo real dos demais usuários.
 - **Feedback Visual**: O usuário tem um feedback visual de quem está digitando e de quem enviou a mensagem.
 - **Exibição de Usuários Conectados**: Barra lateral que mostra os usuários que estão visualizando o chat.
+- **Responsividade**: A aplicação é totalmente responsiva.
 
 ## Tecnologias Utilizadas
 
