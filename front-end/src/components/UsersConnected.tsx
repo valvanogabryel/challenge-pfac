@@ -7,7 +7,7 @@ export function UsersConnected() {
   const [connectedUsers, setConnectedUsers] = useState<string[]>();
 
   useEffect(() => {
-    const socket = io('http://localhost:4003');
+    const socket = io('https://pfac-chat-backend-eb5895b4a7a3.herokuapp.com');
 
     socket.on('activeUsers', (users: string[]) => {
       setConnectedUsers(users);
