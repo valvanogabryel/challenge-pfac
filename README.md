@@ -2,6 +2,10 @@
 
 Este é o repositório da aplicação de chat desenvolvida como parte do teste técnico da empresa Play For A Cause. A aplicação é um sistema de chat que fornece autenticação simples, armazenamento de mensagens e comunicação em tempo real entre usuários em um chat global.
 
+### Deploy
+- **Vercel** (Front-end) e **Heroku** (Back-end)
+- **Deploy 🚀**: https://challenge-pfac-frontend.vercel.app/
+
 ## Funcionalidades
 - **Autenticação de Usuário:** Cadastro e login com email, nome de usuário e senha.
 - **Armazenamento de Mensagens:** As mensagens enviadas pelos usuários são salvas e recuperadas.
@@ -25,13 +29,11 @@ Este é o repositório da aplicação de chat desenvolvida como parte do teste t
 - **Consumo de api:** Axios
 - **Validação de formulário:** Zod
 
-### Deploy
-- **Vercel** (Front-end) e **Heroku** (Back-end)
-
 ## Desafios
 - **Implementação do Redis:** ...
 - **Integração Backend-Frontend:** ...
 - **Deploy do back-end da aplicação**: ...
+- **Aprendizado de novas tecnologias**: NestJS, Redis.
 
 ## Observações
 - Troquei a biblioteca `React Hook Form` pelo `Formik` por já ter tido algum contato antes com o Formik.
@@ -55,9 +57,6 @@ portfólio: portfolio-gabryel.vercel.app
 
 ## Plano de Continuidade e Melhorias
 
-### Entrega Parcial
-- Implementar autenticação básica e armazenamento de mensagens
-- Configurar comunicação em tempo real entre usuários
 
 ### Futuras Melhorias
 - Adição de chats específicos de um usuário para outro
