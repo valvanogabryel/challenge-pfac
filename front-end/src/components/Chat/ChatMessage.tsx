@@ -1,7 +1,7 @@
+import { useEffect, useRef } from 'react';
 import { useUserInfo } from '@/context/userInfoContext';
 import IMessage from '@/interface/IMessage';
 import { motion } from 'framer-motion';
-import { useEffect, useRef } from 'react';
 
 interface ChatMessageProps {
   messages: IMessage[];
