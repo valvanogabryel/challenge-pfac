@@ -21,7 +21,7 @@ export function useCustomFormik(type: 'signup' | 'login') {
           required_error: 'O nome de usuário é obrigatório',
         })
         .min(3, 'O nome de usuário deve ser maior que 3 caractéres')
-        .max(10, 'O nome de usuário deve ser menos que 10 caractéres'),
+        .max(10, 'O nome de usuário deve ser menor que 10 caractéres'),
       password: z
         .string({
           required_error: 'A senha é obrigatória',

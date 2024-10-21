@@ -1,6 +1,6 @@
 import { api } from '@/api';
 import IUser from '@/interface/IUser';
-import toast, { ErrorIcon, LoaderIcon } from 'react-hot-toast';
+import toast, { ErrorIcon } from 'react-hot-toast';
 
 export default async function registerUser(userData: IUser) {
   try {

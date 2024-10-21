@@ -7,7 +7,7 @@ import { useCustomFormik } from '@/hook/useCustomFormik';
 
 export function Form({ type }: Readonly<{ type: 'signup' | 'login' }>) {
   const formik = useCustomFormik(type);
-  
+
   return (
     <form
       className="flex flex-col gap-8"
@@ -43,7 +43,7 @@ export function Form({ type }: Readonly<{ type: 'signup' | 'login' }>) {
       <div className="flex flex-col text-center gap-2">
         <Button type="submit">
           {type === 'signup' ? 'Criar conta' : 'Entrar'}
-        </Button>
+        </Button> 
 
         {type === 'signup' ? (
           <span className="text-xs font-light leading-relaxed">
